@@ -1,0 +1,13 @@
+pip list
+(ou
+pip.get_installed_distributions(local_only=True))
+
+pip show numpy
+
+pip uninstall numpy
+
+conda install numpy --force-reinstall
+
+pip freeze > requirements. txt
+
+// juste les commandes? ou possble de mettre des commentaires?
