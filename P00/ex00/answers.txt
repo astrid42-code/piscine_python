@@ -11,3 +11,4 @@ conda install numpy --force-reinstall
 pip freeze > requirements. txt
 
 // juste les commandes? ou possble de mettre des commentaires?
+// doit on laisser miniconda dans le dossier?
