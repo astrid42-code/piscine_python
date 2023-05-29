@@ -1,9 +1,10 @@
 import sys
+
 # delete the first argv (file name)
-sys.argv.pop(0)
+# sys.argv.pop(0)
 
 str = ""
-for args in sys.argv[:]:
+for args in sys.argv[1:]:
     for char in args:
         if (char.isupper()):
             str += char.lower()
