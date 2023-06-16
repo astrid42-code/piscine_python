@@ -13,6 +13,8 @@ import sys
 #  of the code and can be useful for comments on Fixing bugs and tasks 
 #  that are needed to be done.
 
-1 creer une fonction text_analyser(string str)
-2 sum(str.isupper() + str.islower() + str.is?? + str.isspace())
-3 cas d erreurs + sortie
+# 1 creer une fonction text_analyser(string str)
+# 2 sum(str.isupper() + str.islower() + str.is?? + str.isspace())
+# 3 cas d erreurs + sortie
+
+
