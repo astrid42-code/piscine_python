@@ -13,7 +13,7 @@ import sys
 #  of the code and can be useful for comments on Fixing bugs and tasks 
 #  that are needed to be done.
 
-def text_analyser(str):
+def text_analyzer(str):
 
     """
     This function takes a single string argument and displays
@@ -23,8 +23,7 @@ def text_analyser(str):
     """
 
     if len(str) == 0:
-        text = input("Please, I need something to analyze : \n")
-        text_analyser(text)
+        main()
 
     uc = 0
     lc = 0
@@ -41,7 +40,7 @@ def text_analyser(str):
             elif i.isdigit(): 
                 nb += 1
         total = len(str)
-        # p : punctuation (len - analyzed chars - numbers)
+        # p : punctuation = nb total de chars - analyzed chars - numbers
         p = total - (uc + lc + s) - nb
         aff(total, uc, lc, p, s)
 
@@ -52,11 +51,21 @@ def aff(total, uc, lc, p, s):
     print("- ", p, " punctuation mark(s)")
     print("- ", s, " space(s)")
 
+def main():
+    if (len(sys.argv) > 1):
+        assert False, "ERROR: wrong number of arguments."
+    # pb entre le sujet et lexemple donne (avec argument a analyser...)
+    text = input("What is the text to analyze?\n")
+    try:
+        text_analyzer(text)
+    except Exception:
+	    assert False, "AssertionError: argument is not a string"
+    # ne prend pas l exception : comment verifier le type du txt avant de l envoyer?
 
-text = input("What is the text to analyze? \n")
-text_analyser(text)
+if __name__ == "__main__":
+    main()
 
-sys.exit(1)
+# sys.exit(1)
 
 
 # plutot fonctionnel mais cetains exemples du sujet ne sont pas ok :
