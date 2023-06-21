@@ -13,10 +13,6 @@ import sys
 #  of the code and can be useful for comments on Fixing bugs and tasks 
 #  that are needed to be done.
 
-# 3 cas d erreurs + sortie
-# 1 creer une fonction text_analyser(string str)
-# 2 sum(str.isupper() + str.islower() + str.is?? + str.isspace())
-
 def text_analyser(str):
 
     """
@@ -26,31 +22,46 @@ def text_analyser(str):
     Then it prints each category
     """
 
-    if 
+    if len(str) == 0:
+        text = input("Please, I need something to analyze : \n")
+        text_analyser(text)
 
-    int i = 0
-    int res
-    int uc = 0
-    int lc = 0
-    int p = 0
-    int s = 0
-
-    if str:
-        while str[i]:
-            if str[i].isupper():
+    uc = 0
+    lc = 0
+    s = 0
+    nb = 0
+    if len(str) > 0:
+        for i in str:
+            if i.isupper():
                 uc += 1
-            elif str[i].islower():
+            elif i.islower():
                 lc += 1
-            elif str[i].isspace():
+            elif i.isspace():
                 s += 1
-            elif str[i] > 32 and str[i] < 58:
-                p += 1
-            i += 1
+            elif i.isdigit(): 
+                nb += 1
+        total = len(str)
+        # p : punctuation (len - analyzed chars - numbers)
+        p = total - (uc + lc + s) - nb
+        aff(total, uc, lc, p, s)
 
-    res = sum(uc + lc + p + s)
-    print(res)
+def aff(total, uc, lc, p, s):
+    print("The text contains ", total, " character(s):")
+    print("- ", uc, " upper letter(s)")
+    print("- ", lc, " lower letter(s)")
+    print("- ", p, " punctuation mark(s)")
+    print("- ", s, " space(s)")
 
-def aff():
-    print("from " )
+
+text = input("What is the text to analyze? \n")
+text_analyser(text)
 
 sys.exit(1)
+
+
+# plutot fonctionnel mais cetains exemples du sujet ne sont pas ok :
+# >>> text_analyzer()
+# What is the text to analyze?
+# >>> text_analyzer(42)
+# AssertionError: argument is not a string
+# > a priori meme souci de nonprise en compte directement dans la console de ma fonction
