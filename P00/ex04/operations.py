@@ -21,7 +21,7 @@ def aff(nb1, nb2):
 	print("Product:	", nb1 * nb2)
 	if nb2 == 0:
 		print("Quotient: 	 ERROR (division by zero)")
-		print("Remainder: 	 ERROR (division by zero)")
+		print("Remainder: 	 ERROR (modulo by zero)")
 		sys.exit(1)
 	print("Quotient:	", nb1 / nb2)
 	print("Remainder:	", nb1 % nb2)
