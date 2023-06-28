@@ -6,12 +6,9 @@ if len(sys.argv) < 3:
 elif len(sys.argv) > 3:
 	assert False, "too many arguments"
 
-# print(sys.argv)
-
 try:
 	nb1 = int(sys.argv[1])
 	nb2 = int(sys.argv[2])
-	# print("nb1 ", nb1, " nb2 ", nb2)
 except Exception:
 	assert False, "argument is not an integer"
 

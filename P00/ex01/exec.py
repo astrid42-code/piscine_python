@@ -12,4 +12,5 @@ for args in sys.argv[1:]:
             str += char.upper()
 print(str[::-1])
 
+# print(str[::-1]):
 # Slice notation takes the form [start:stop:step]. In this case, we omit the start and stop positions since we want the whole string. We also use step = -1, which means, "repeatedly step from right to left by 1 character".

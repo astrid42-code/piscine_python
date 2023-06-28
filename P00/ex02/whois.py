@@ -14,8 +14,6 @@ try:
 	nb = int(sys.argv[0])
 except Exception:
 	assert False, "argument is not an integer"
-	# print("Assertion error: argument is not an integer")
-	# sys.exit(1)
 
 if nb == 0:
 	print("I'm Zero")
