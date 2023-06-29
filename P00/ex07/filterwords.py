@@ -13,11 +13,12 @@ except Exception:
 # print(s, n)
 def filter():
     res = [s.translate(str.maketrans('', '', string.punctuation))]
-    # print(res)
-    # 1 splitter les mots (avec espace(s) comme sep)
-    # 2 checker la taille de chaque mot de la liste : si len du mot >= n 
-    #     recuperer le mot dans la nouvelle liste
-    # 3 transformer en list comprehension 
+    res = ''.join(res)
+    x = res.split()
+    # list comprehension
+    newlist = [words for words in x if len(words) > n]
+    print(newlist)
+
 
 filter()
 
@@ -25,3 +26,14 @@ sys.exit(1)
 
 # List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
 # cf example : https://www.w3schools.com/python/python_lists_comprehension.asp
+
+
+# fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+# newlist = []
+
+# for x in fruits:
+#     print(x)
+#     if "a" in x:
+#         newlist.append(x)
+
+# print(newlist)
