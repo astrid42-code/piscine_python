@@ -38,50 +38,58 @@ CHARS_TO_MORSE_CODE_MAPPING = {
     '8': '---..',
     '9': '----.',
     '0': '-----',
-    '.': '.-.-.-',
-    ',': '--..--',
-    '?': '..--..',
-    '\'': '· − − − − ·',
-    '!': '− · − · − −',
-    '/': '− · · − ·',
-    '(': '− · − − ·',
-    ')': '− · − − · −',
-    '&': '· − · · ·',
-    ':': '− − − · · ·',
-    ';': '− · − · − ·',
-    '=': '− · · · −',
-    '+': '· − · − ·',
-    '-': '− · · · · −',
-    '_': '· · − − · −',
-    '"': '· − · · − ·',
-    '$': '· · · − · · −',
-    '@': '· − − · − ·',
+    # only space and alphanumeric chars 
+    # '.': '.-.-.-',
+    # ',': '--..--',
+    # '?': '..--..',
+    # '\'': '· − − − − ·',
+    # '!': '− · − · − −',
+    # '/': '− · · − ·',
+    # '(': '− · − − ·',
+    # ')': '− · − − · −',
+    # '&': '· − · · ·',
+    # ':': '− − − · · ·',
+    # ';': '− · − · − ·',
+    # '=': '− · · · −',
+    # '+': '· − · − ·',
+    # '-': '− · · · · −',
+    # '_': '· · − − · −',
+    # '"': '· − · · − ·',
+    # '$': '· · · − · · −',
+    # '@': '· − − · − ·',
 }
 
+str = ''
 if (len(sys.argv) == 1):
+    print("You need more arguments")
     sys.exit(1)
+elif (len(sys.argv) > 2):
+    sys.argv.pop(0)
+    str = ' '.join(sys.argv)
+else:
+    str = sys.argv[1]
+# print(str)
 
 # function to encode plain English text to morse code
-def to_morse_code(txt):
+def to_morse_code(str):
     morse_code = ''
-    for char in txt:
+    for char in str:
+        if char.islower():
+            char = char.upper()
         # checking for space
         # to add single space after every character and double space after every word
         if char == ' ':
-            morse_code += '  '
+            morse_code += '/ '
+        elif char not in CHARS_TO_MORSE_CODE_MAPPING.keys():
+            print("ERROR")
+            sys.exit(1)
         else:
             # adding encoded morse code to the result
-            morse_code += CHARS_TO_MORSE_CODE_MAPPING[char.upper()] + ' '
+            morse_code += CHARS_TO_MORSE_CODE_MAPPING[char] + ' '
     return morse_code
 
-morse_code = sys.argv[1]
+morse_code = str
 res = to_morse_code(morse_code)
 print(res)
 
 sys.exit(1)
-
-# a ajouter :
-# A space character is represented by a slash /
-# If more than one argument are provided, merge them into a single string with each
-# argument separated by a space character.
-# If no argument is provided, do nothing or print an usage

@@ -13,7 +13,9 @@ except Exception:
 # print(s, n)
 def filter():
     res = [s.translate(str.maketrans('', '', string.punctuation))]
+    print("1=", res)
     res = ''.join(res)
+    print("2=",res)
     x = res.split()
     # list comprehension
     newlist = [words for words in x if len(words) > n]
