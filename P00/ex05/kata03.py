@@ -7,3 +7,4 @@ print(tiret, kata, sep="", end="")
 
 
 sys.exit(1)
+

@@ -1,0 +1,7 @@
+kata03 : #seulement afficher 42 chars
+
+checker ex10 avec code_blocks
+
+revoir ex00 avec code_blocks /conda ...
+
+ex01 : espaces non pris en compte (cf dernier exemple de code_blocks)
